@@ -1,0 +1,37 @@
+extends ../layout
+
+block content 
+    
+    a(href='/bicicletas/create') 
+        button.newB Nueva Bicicleta
+    a(href='../') 
+        button.btnV
+            i.fa-sharp.fa-solid.fa-rotate-left
+
+    center
+        h1(style={color: '#000', margin:{top: 30}}) Bicicletas
+
+    table.table
+        thead 
+            tr 
+                th(scope='col') #
+                th(scope='col') Color 
+                th(scope='col') Modelo 
+                th(scope='col') Ubicacion
+                th(scope='col') 
+                th(scope='col') 
+        tbody 
+            each bici in bicis 
+                tr 
+                    th(scope='row')= bici.id 
+                        td=bici.color 
+                        td=bici.modelo 
+                        td=bici.ubicacion
+                        td 
+                            a(href=`bicicletas/${bici.id}/update`) 
+                                button.edit Editar
+                        td 
+                            form.inline(method='post' action='bicicletas/'+bici.id+'/delete')
+                                input(type='hidden' name='id' value=bici.id)
+                                button.btnDel(type='submit' name='submit_param' value='submit_value' class='btnDel')
+                                    ='Eliminar'

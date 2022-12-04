@@ -1,0 +1,33 @@
+extends head
+
+block content
+
+    a(href='/bicicletas')
+        button.btnV
+            i.fa-sharp.fa-solid.fa-rotate-left
+
+    br
+    br
+    br
+    center
+        h1 Nueva Bicicleta 
+    br
+    br
+    div.cajon
+        form(action='/bicicletas/create' method='post')
+            .form-group
+                label(for='exampleInputEmail1') ID
+                input#id.form-control(type='text' name='id')
+            .form-group
+                label(for='exampleInputEmail1') Color
+                input#color.form-control(type='text' name='color')
+            .form-group
+                label(for='exampleInputEmail1') Modelo
+                input#modelo.form-control(type='text' name='modelo')
+            .form-group
+                label(for='exampleInputEmail1') Latitud
+                input#modelo.form-control(type='text' name='lat')
+            .form-group
+                label(for='exampleInputEmail1') Longitud
+                input#modelo.form-control(type='text' name='lng')
+            button.btn.btn-primary(type='submit') OK
