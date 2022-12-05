@@ -74,6 +74,32 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar-track{	
+  background: #f8f9fa;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar
+{
+	width: 11px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #AAA;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(90deg,
+	                                          rgba(0, 0, 0, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(0, 0, 0, .2) 50%,
+											  rgba(0, 0, 0, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -1967,17 +1993,18 @@ progress {
   top: 30px;
   padding: 20px;
   border-radius: 20px;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
+  border-color: #000;
+  color: #000;
   background: transparent;
+  background-image: linear-gradient(45deg, #000 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 600ms ease-in-out;  
 }
 
 .newB:hover {
-  background: #000;
+  background-position: 0;
   color: #fff;
-  transition: ease 0.5s;
 }
 
 .cajon{
@@ -4222,7 +4249,9 @@ textarea.form-control-lg {
   font-size: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
+  display: inline-flex;
 }
+
 .navbar-nav {
   display: flex;
   flex-direction: column;
@@ -11577,6 +11606,7 @@ body {
   }
   #mainNav.navbar-shrink {
     background-color: #fff;
+    opacity: 0.9;
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #000;
@@ -11615,7 +11645,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("./../bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("./../backG.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
